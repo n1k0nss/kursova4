@@ -17,8 +17,9 @@
               <div class="row d-flex justify-content-between align-items-center">
                 <div class="col-md-2 col-lg-2 col-xl-2">
                   <img
-                    src="https://Valorantstrike.com/wp-content/uploads/2020/10/Valorant-Singularity-Collection-Knife-Medium.jpg"
-                    class="img-fluid rounded-3" alt="Cotton T-shirt">
+                    src="../img/{{$product->image}}.jpg"
+                    class="img-fluid rounded-3"
+                    height="143" alt="Cotton T-shirt">
                 </div>
                 <div class="col-md-3 col-lg-3 col-xl-3">
                   <p class="lead fw-normal mb-2">{{$product->name}}</p>
@@ -41,11 +42,16 @@
 
                 </div>
                 <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                  <h5 class="mb-0">{{$product->price}}VP</h5>
-                  {{-- <h5 class="mb-0">{{$product->getPriceForCount()}}VP</h5> --}}
+                  <h5 class="mb-0">Price: {{$product->price}}VP</h5>
+                  <h5 class="mb-0">Total: {{$product->getPriceForCount()}}VP</h5>
                 </div>
                 <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                  <a href="#!" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
+                    <form action="{{route('cart-detach', $product)}}" method="POST">
+                        <button type="submit" class="btn btn-link px-2 text-danger">
+                            <i class="fas fa-trash fa-lg"></i>
+                      </button>
+                    @csrf
+                    </form>
                 </div>
               </div>
             </div>
@@ -65,8 +71,8 @@
           </div>
 
           <div class="card">
-            <div class="card-body">
-              {{-- <button type="button" class="btn btn-warning btn-block btn-lg">Proceed to Pay {{$order->getFullPrice()}} VP</button> --}}
+            <div class="card-body d-flex justify-content-center">
+              <button type="button" class="btn btn-warning btn-block btn-lg">Proceed to Pay {{$order->getFullPrice()}} VP</button>
             </div>
           </div>
 

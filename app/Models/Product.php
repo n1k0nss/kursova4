@@ -17,10 +17,11 @@ class Product extends Model
     public function getPriceForCount(){
 
         if(!is_null($this->pivot)){
-            return $this->prise * $this->pivot->count;
+            return $this->price * $this->pivot->count;
         } else{
-        return $this->prise;
+        return $this->price;
         }
 
     }
+
 }

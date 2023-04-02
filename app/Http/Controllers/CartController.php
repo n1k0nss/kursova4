@@ -22,7 +22,7 @@ class CartController extends Controller
         return view('cart', compact('categories', 'products', 'order'));
     }
 
-    public function CartAdd($productId){
+    public function cartAdd($productId){
         $orderId = session('orderId');
 
         if(is_null($orderId)){
@@ -68,6 +68,15 @@ class CartController extends Controller
                 $PivotRow->update();
         }
         }
+
+        return redirect()->route('cart');
+    }
+
+    public function cartDetach($productId) {
+        $orderId = session('orderId');
+        $order = Order::find($orderId);
+
+        $order->products()->detach($productId);
 
         return redirect()->route('cart');
     }

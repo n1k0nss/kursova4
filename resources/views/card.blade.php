@@ -3,7 +3,7 @@
         <!-- Sale badge-->
         <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
         <!-- Product image-->
-        <img class="card-img-top" src="https://Valorantstrike.com/wp-content/uploads/2020/10/Valorant-Singularity-Collection-Knife-Medium.jpg" alt="..." />
+        <img class="card-img-top" src="./img/{{$product->image}}.jpg" height="143" alt="..." />
         <!-- Product details-->
         <div class="card-body p-4">
             <div class="text-center">
@@ -19,7 +19,7 @@
                     <div class="bi-star-fill"></div>
                 </div>
                 <!-- Product price-->
-                <span>{{$product->price}}</span>
+                <span>{{$product->price}}VP</span>
 
             </div>
         </div>
