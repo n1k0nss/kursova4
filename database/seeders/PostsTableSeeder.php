@@ -347,7 +347,7 @@ class PostsTableSeeder extends Seeder
                 'author_id' => 0,
                 'seo_title' => null,
                 'excerpt'   => 'This is the excerpt for the sample Post',
-                'body'      => '<p>This is the body for the sample post, which includes the body.</p>
+                'body'      => '<p>This is the body for the sample post, which components the body.</p>
                 <h2>We can use all kinds of format!</h2>
                 <p>And include a bunch of other stuff.</p>',
                 'image'            => 'posts/post2.jpg',

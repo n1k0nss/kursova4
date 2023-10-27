@@ -1,0 +1,142 @@
+.one-click {
+    &__content{
+        max-width: 440px;
+    }
+    &__form {
+        width: 100%;
+        height: 100%;
+        max-width: 360px;
+    }
+    &__form-group{
+        position: relative;
+        &.error{
+            .one-click__form-input{
+                border: 1px solid $red;
+            }
+        }
+        &.is-focused{
+            .one-click__form-input{
+                border: 1px solid $blue;
+            }
+            .one-click__label{
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+        &:not(:last-child){
+            margin-bottom: 30px;
+        }
+        .pristine-error{
+            color: $red;
+            font-size: 11px;
+            margin-top: 2px;
+        }
+    }
+    &__form-input {
+        width: 100%;
+        height: 44px;
+        padding-left: 16px;
+        border: 1px solid #D9DEE9;
+        border-radius: 6px;
+        font-size: 14px;
+        &::placeholder {
+            color: #ABB5C7;
+        }
+
+    }
+    &__label{
+        position: absolute;
+        bottom: 100%;
+        left: 18px;
+        display: inline-block;
+        padding: 3px 10px;
+        background-color: #1598D8;
+        border-radius: 4px 4px 0px 0px;
+        color: #fff;
+        font-weight: 400;
+        font-size: 12px;
+        transition-duration: 0.3s;
+        opacity: 0;
+        visibility: hidden;
+    }
+    &__form-submit {
+        display: flex;
+        height: 44px;
+        border-radius: 6px;
+        background-color: $blue;
+        color: #fff;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1.5;
+        &[disabled] {
+            pointer-events: none;
+            .one-click__form-icon {
+                stroke: #888CA4;
+                stroke-width: 1.5;
+            }
+        }
+    }
+    &__form-icon {
+        margin-left: 10px;
+        width: 24px;
+        height: 24px;
+        stroke: #fff;
+        stroke-width: 1.5;
+        transition-duration: .3s;
+    }
+    &__close-button{
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    &__button-icon{
+        display: flex;
+        align-self: flex-start;
+        margin-top: 7px;
+        width: 18px;
+        height: 2px;
+        background-color: transparent;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+        &::before{
+            content: "";
+            position: absolute;
+            display: flex;
+            height: 2px;
+            transition: transform 0.3s, background-color 0.3s;
+            top: calc(50% - 1px);
+            right: calc(50% - 18px / 2);
+            width: 18px;
+            transform: rotate(45deg);
+            background-color: #ABB5C7;
+            border-radius: 50%;
+        }
+        &::after{
+            content: "";
+            position: absolute;
+            display: flex;
+            height: 2px;
+            transition: transform 0.3s, background-color 0.3s;
+            top: calc(50% - 1px);
+            right: calc(50% - 18px / 2);
+            width: 18px;
+            transform: rotate(135deg);
+            background-color: #ABB5C7;
+            border-radius: 50%;
+        }
+    }
+}
+
+@include min(992px){
+    .one-click{
+        &__content{
+            padding: 60px;
+        }
+        &__form-input, &__form-submit {
+            height: 54px;
+        }
+    }
+}

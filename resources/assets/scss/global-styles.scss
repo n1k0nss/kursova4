@@ -1,0 +1,21 @@
+@import "@base/bootstrap";
+
+@import '~swiper/scss';
+@import '~swiper/scss/effect-fade';
+@import '~swiper/scss/navigation';
+@import '~swiper/scss/pagination';
+@import '~swiper/scss/grid';
+
+@import "@base/vars";
+@import "@base/base";
+@import "@base/fonts";
+@import "@base/layouts";
+@import "@base/reset";
+
+@import "@ui/title";
+
+@import "@header/index";
+@import "@footer/index";
+
+@import "@components/product-card";
+

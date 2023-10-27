@@ -1,0 +1,67 @@
+.title {
+    display: block;
+    position: relative;
+    font-size: 20px;
+    line-height: 1.2;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--gray-black);
+    padding-top: 16px;
+    margin-bottom: 30px;
+    &:before {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        width: 100px;
+        height: 2px;
+        background-color: var(--navy);
+    }
+    &--center {
+        text-align: center;
+        &:before {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}
+
+@include min(360px) {
+    .title {
+        font-size: 22px;
+    }
+}
+
+@include min(440px) {
+    .title {
+        font-size: 24px;
+    }
+}
+
+@include min(440px) {
+    .title {
+        font-size: 26px;
+    }
+}
+
+@include min(1200px) {
+    .title {
+        font-size: 28px;
+        &:before {
+            width: 190px;
+            height: 2px;
+        }
+    }
+}
+
+@include min(1440px) {
+    .title {
+        font-size: 30px;
+    }
+}
+
+@include min(1560px) {
+    .title {
+        font-size: 34px;
+    }
+}

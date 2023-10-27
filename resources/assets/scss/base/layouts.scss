@@ -1,0 +1,49 @@
+.container {
+    position: relative;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+@include min(576px) {
+    .container {
+        max-width: 570px;
+        margin: 0 auto;
+    }
+}
+
+@include min(768px) {
+    .container {
+        max-width: 750px;
+    }
+}
+
+@include min(992px) {
+    .container {
+        max-width: 990px;
+    }
+}
+
+@include min(1200px) {
+    .container {
+        max-width: 1170px;
+    }
+}
+
+@include min(1360px) {
+    .container {
+        max-width: 1350px;
+    }
+}
+
+@include min(1560px) {
+    .container {
+        max-width: 1530px;
+    }
+}
+
+@include min(1700px) {
+    .container {
+        max-width: 1600px;
+    }
+}

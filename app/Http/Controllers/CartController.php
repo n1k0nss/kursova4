@@ -10,26 +10,26 @@ use Illuminate\Http\Request;
 class CartController extends Controller
 {
     public function cart(){
-        $products = Product::get();
-        $categories = Category::get();
-
+        $products = Product::all();
+        $categories = Category::all();
         $orderId = session('orderId');
+        $order = Order::with('products')->find($orderId);
+
 
         if(!is_null($orderId)){
             $order = Order::findOrFail($orderId);
         }
 
-        return view('cart', compact('categories', 'products', 'order'));
+        return view('site.pages.cart.index', compact('categories', 'products', 'order'));
     }
 
     public function cartAdd($productId){
         $orderId = session('orderId');
+        $order = Order::findOrNew($orderId);
 
-        if(is_null($orderId)){
-            $order = Order::create()->id;
+        if (!$order->id) {
+            $order->save();
             session(['orderId' => $order->id]);
-        } else{
-            $order = Order::find($orderId);
         }
 
 
@@ -38,11 +38,11 @@ class CartController extends Controller
                 $PivotRow->count++;
                 $PivotRow->update();
             } else{
-                $order->products()->attach($productId);
+                $order->products()->syncWithoutDetaching([$productId => ['count' => 1]]);
             }
         return redirect()->route('cart');
 
-        }
+    }
 
 
 
