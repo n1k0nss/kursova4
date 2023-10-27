@@ -18,7 +18,7 @@
             {{$product->price}}
             VP
         </span>
-        <a href="" class="product-card__footer-button product-card__cart">
+        <a href="{{route('product', [$product->category->code, $product->code])}}" class="product-card__footer-button product-card__cart">
             <svg class="product-card__footer-icon">
                 <use xlink:href="{{mix('/img/sprite.svg')}}#cart"></use>
             </svg>

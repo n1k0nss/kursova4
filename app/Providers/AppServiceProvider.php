@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\Order;
 use Illuminate\Support\ServiceProvider;
-
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -23,6 +23,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        view()->composer('components.layouts.header', function ($view) {
+            $orderId = session('orderId');
+            $order = Order::find($orderId);
+            $totalProductCount = $order ? $order->getTotalProductCount() : 0;
+
+            $view->with('totalProductCount', $totalProductCount);
+        });
     }
 }

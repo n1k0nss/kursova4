@@ -26,6 +26,7 @@
                             <svg width="24" height="24">
                                 <use xlink:href="{{mix('/img/sprite.svg')}}#cart"></use>
                             </svg>
+                            <span class="cart-icon__count">{{ $totalProductCount }}</span>
                         </div>
                         <span>Кошик</span>
                     </a>

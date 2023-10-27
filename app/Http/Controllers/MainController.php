@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -11,7 +12,8 @@ class MainController extends Controller
     public function index(){
         $products = Product::get();
         $categories = Category::get();
-        return view('site.pages.home.index', compact('categories', 'products'));
+        $order = Order::find(session('orderId'));
+        return view('site.pages.home.index', compact('categories', 'products', 'order'));
     }
 
     public function category($code)

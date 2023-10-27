@@ -158,29 +158,30 @@
 
         .cart-icon{
             position: relative;
+
+            &__count{
+                content: '';
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: $hover-color;
+                border-radius: 50%;
+                width: 13px;
+                height: 13px;
+                top: -2px;
+                right: -3px;
+
+
+                font-weight: 700;
+                font-size: 6.66667px;
+                line-height: 120%;
+                font-feature-settings: 'pnum' on, 'lnum' on;
+                color: #fff;
+            }
         }
 
 
-        .cart-icon::after{
-            content: '12';
-            position: absolute;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: $hover-color;
-            border-radius: 50%;
-            width: 13px;
-            height: 13px;
-            top: -2px;
-            right: -3px;
-
-
-            font-weight: 700;
-            font-size: 6.66667px;
-            line-height: 120%;
-            font-feature-settings: 'pnum' on, 'lnum' on;
-            color: #fff;
-        }
     }
 
     .modal__nav{
