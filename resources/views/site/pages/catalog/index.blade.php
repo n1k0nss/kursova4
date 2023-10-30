@@ -3,27 +3,24 @@
 @section('bladename', 'catalog')
 
 @section('content')
-    <!-- Header-->
-    <header class="bg-dark py-5"
-            style="background-image: url(./img/panorama.jpg); background-size: cover; background-repeat: no-repeat">
-        <div class="container px-4 px-lg-5 my-5">
-            <div class="text-center text-white">
-                <h1 class="display-4 fw-bolder">{{$category->name}}</h1>
-                <h4 class="text-muted">Skins available: {{$category->products->count()}}</h4>
-                <p class="lead fw-normal text-white-50 mb-0">{{$category->description}}</p>
-            </div>
-        </div>
-    </header>
-    <section class="py-5">
-        <div class="container px-4 px-lg-5 mt-5">
-            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+    <main class="catalog">
+        <!-- Header-->
+        <section class="catalog__hero hero">
+            <h1 class="hero__title">{{$category->name}}</h1>
+            <span class="hero__count">Товарів в наявності: {{$category->products->count()}}</span>
+            <span class="hero__description">{{$category->description}}</span>
+        </section>
 
-                @foreach ($category->products as $product)
-                    @include('components.site.card', compact('product'))
-                @endforeach
-
+        <section class="catalog__products">
+            <div class="catalog__container container js--show-more-container">
+                <h2 class="catalog__subtitle title title--center">Список товарів</h2>
+                <div class="catalog__products-list products-list js--show-more-content">
+                    @foreach ($category->products as $product)
+                        @include('components.site.card', compact('product'))
+                    @endforeach
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 @endsection
 

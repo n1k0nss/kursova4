@@ -1,7 +1,7 @@
 <div class="product-card">
     <a class="product-card__image-link" href="{{route('product', [$product->category->code, $product->code])}}">
         <picture class="product-card__picture">
-            <img class="product-card__image" src="./img/{{$product->image}}.jpg"
+            <img class="product-card__image" src="{{$product->image}}"
                  alt="">
         </picture>
     </a>

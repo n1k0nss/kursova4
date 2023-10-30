@@ -30,5 +30,13 @@ class AppServiceProvider extends ServiceProvider
 
             $view->with('totalProductCount', $totalProductCount);
         });
+
+        view()->composer('site.pages.cart.index', function ($view) {
+            $orderId = session('orderId');
+            $order = Order::find($orderId);
+            $totalProductCount = $order ? $order->getTotalProductCount() : 0;
+
+            $view->with('totalProductCount', $totalProductCount);
+        });
     }
 }

@@ -1,6 +1,5 @@
 import axios from 'axios';
 import Modal from "@/libs/Modal";
-import { errorModal, changeErrorText } from "@/common/error-modal";
 import Validate from "@/libs/validate";
 
 let checkCallGetResponse = true;
@@ -53,6 +52,7 @@ function sendAjaxOneClick(e)
     let sendData = {
         'phone_number': input,
         'name': nameInput,
+        'email': emailInput,
     };
     if (checkCallGetResponse) {
         checkCallGetResponse = false;
@@ -71,8 +71,6 @@ function sendAjaxOneClick(e)
                 nameInputEl.value = '';
                 emailInputEl.value = '';
                 oneClickSubmitButton.setAttribute("disabled", "");
-                changeErrorText(error.response.data.message);
-                errorModal.open();
             });
     }
 }
@@ -91,7 +89,6 @@ function toggleFocus(element) {
 
 function addToggleFocusToItems(selector) {
     const items = document.querySelectorAll(selector);
-    console.log(items)
     items.forEach((item) => {
         toggleFocus(item);
     });

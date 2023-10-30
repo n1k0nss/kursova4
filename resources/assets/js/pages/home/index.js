@@ -1,1 +1,1 @@
-import './components/mobile-menu';
+import '@/layouts/index';

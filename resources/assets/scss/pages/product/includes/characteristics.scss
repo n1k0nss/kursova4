@@ -1,0 +1,100 @@
+.characteristics {
+    width: 100%;
+    margin-bottom: 45px;
+    &__title{
+        display: block;
+        width: 100%;
+        margin-bottom: 50px;
+        font-size: 20px;
+        font-weight: 400;
+        color: $black;
+    }
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-bottom: 20px;
+        overflow: hidden;
+        transition-duration: .4s;
+        tbody {
+            width: 100%;
+        }
+    }
+    &__row {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 14px;
+    }
+    &__name {
+        width: 100px;
+        margin-right: 13px;
+        font-weight: 400;
+        font-size: 12px;
+        color: #566577;
+        line-height: 1.5;
+    }
+    &__value {
+        width: calc(100% - 113px);
+        display: flex;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 1.5;
+    }
+}
+
+@include min(390px){
+    .characteristics{
+        &__title{
+            font-size: 24px;
+        }
+        &__name,&__value {
+            font-size: 14px;
+        }
+    }
+}
+
+@include min(576px){
+    .characteristics{
+        &__name {
+            width: 150px;
+        }
+        &__value {
+            width: calc(100% - 163px);
+        }
+    }
+}
+
+@include min(992px){
+    .characteristics{
+        tbody{
+            column-count: 2;
+        }
+        &__title{
+            @include font-size(30px);
+        }
+        &__name,&__value {
+            @include font-size(18px);
+        }
+        &__name{
+            width: 200px;
+        }
+        &__value {
+            width: calc(100% - 213px);
+        }
+        &__list{
+            margin-bottom: 10px;
+        }
+    }
+}
+
+@include min(1200px){
+    .characteristics{
+    }
+}
+
+@include min(1560px){
+    .characteristics{
+
+    }
+}

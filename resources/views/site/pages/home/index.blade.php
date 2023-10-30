@@ -1,23 +1,55 @@
 @extends('layouts.master')
 @section('bladename', 'home')
 @section('content')
-    <!-- Header-->
-    <section class="bg-dark py-5"
-             style="background-image: url(./img/panorama.jpg); background-size: cover; background-repeat: no-repeat">
-        <div class="container px-4 px-lg-5 my-5">
-            <div class="text-center text-white">
-                <h1 class="display-4 fw-bolder">All products</h1>
+    <main class="home">
+        <!-- Header-->
+        <section class="home__hero hero">
+            <h1 class="hero__title">ValoShop - Valorant skins market</h1>
+        </section>
+        <!-- Section-->
+        <section class="home__products home-products">
+            <div class="home__container container js--show-more-container">
+                <h2 class="home__subtitle title title--center">Список товарів</h2>
+                <div class="home-products__list products-list js--show-more-content">
+                    @foreach ($products as $product)
+                        <div class="product-card @if($loop->iteration == 9) js--show-more-anchor @endif">
+                            <a class="product-card__image-link" href="{{route('product', [$product->category->code, $product->code])}}">
+                                <picture class="product-card__picture">
+                                    <img class="product-card__image" src="{{$product->image}}"
+                                         alt="">
+                                </picture>
+                            </a>
+                            <div class="product-card__top">
+                                <span class="product-card__code">
+                                № лоту <span class="product-card__code-number">{{ $product->id }}</span>
+                                </span>
+                            </div>
+                            <a class="product-card__title-link" href="{{route('product', [$product->category->code, $product->code])}}">
+                                {{$product->name}}
+                            </a>
+                            <div class="product-card__footer">
+                                <span class="product-card__price">
+                                    {{$product->price}}
+                                    VP
+                                </span>
+                                <a href="{{route('product', [$product->category->code, $product->code])}}" class="product-card__footer-button product-card__cart">
+                                    <svg class="product-card__footer-icon">
+                                        <use xlink:href="{{mix('/img/sprite.svg')}}#cart"></use>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+                <button type="button" class="home-products__btn btn js--show-more" data-show-more-text="Сховати">
+                    <span class="home-products__btn-text btn__text js--show-more-text">
+                        Показати більше
+                    </span>
+                    <svg class="home-products__btn-icon btn__icon">
+                        <use xlink:href="{{mix('/img/sprite.svg')}}#reload"></use>
+                    </svg>
+                </button>
             </div>
-        </div>
-    </section>
-    <!-- Section-->
-    <section class="py-5">
-        <div class="container px-4 px-lg-5 mt-5">
-            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                @foreach ($products as $product)
-                    @include('components.site.card', compact('product'))
-                @endforeach
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 @endsection

@@ -1,0 +1,43 @@
+.products-list{
+    padding-bottom: 60px;
+    position: relative;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    @include widthGap(2, 10px, 10px);
+    transition-duration: .3s;
+    overflow: hidden;
+    &.active {
+        .product-card {
+            display: flex;
+        }
+    }
+}
+
+@include min(768px) {
+    .products-list{
+        @include widthGap(3, 10px, 10px);
+    }
+
+}
+
+@include min(992px) {
+    .products-list{
+        @include widthGap(3, 15px, 15px);
+    }
+
+}
+
+@include min(1200px) {
+    .products-list{
+        @include widthGap(4, 15px, 15px);
+    }
+
+}
+
+@include min(1360px) {
+    .products-list{
+        @include widthGap(4, 20px, 20px);
+    }
+
+}

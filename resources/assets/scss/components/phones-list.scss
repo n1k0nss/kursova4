@@ -1,0 +1,15 @@
+.phones-list {
+    &__item {
+        display: flex;
+        align-items: center;
+    }
+    &__link {
+        text-decoration: none;
+    }
+    &__icon-link {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-left: 15px;
+    }
+}

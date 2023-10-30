@@ -1,1 +1,98 @@
 @import "@globals";
+@import "@components/products-list";
+@import "@components/hero";
+
+.home{
+    .home-products{
+        margin-bottom: 60px;
+        &__btn {
+            position: relative;
+            width: 100%;
+            max-width: none;
+            transition-duration: .3s;
+            display: none;
+            align-items: center;
+            color: $blue;
+            margin-top: 30px;
+        }
+        &__btn-text {
+            font-size: 16px;
+            line-height: 24px;
+            color: $blue;
+            &:last-child {
+                display: none;
+            }
+        }
+        &__btn-icon {
+            margin-left: 5px;
+            stroke: $blue;
+            stroke-width: 2;
+            width: 24px;
+            height: 24px;
+        }
+    }
+}
+
+@include min(390px){
+    .home{
+        .home-products{
+            &__btn-icon{
+                width: 26px;
+                height: 26px;
+            }
+        }
+    }
+}
+
+
+@include min(992px){
+    .home{
+        .home-products{
+            &__btn{
+                margin-top: 15px;
+                transition-duration: .3s;
+                svg{
+                    transition-duration: .3s;
+                }
+                &:hover{
+                    box-shadow: 0 10px 40px #21181040;
+                    svg{
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+            &__btn-icon{
+                margin-left: 10px;
+                width: 18px;
+                height: 18px;
+            }
+        }
+    }
+}
+
+
+@include min(1360px) {
+    .home{
+        .home-products{
+            &__btn-text {
+                font-size: 18px;
+            }
+            &__btn-icon{
+                width: 22px;
+                height: 22px;
+            }
+        }
+    }
+}
+
+@include min(1560px) {
+    .home{
+        .home-products{
+            &__btn-icon{
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+}
+

@@ -6,6 +6,8 @@ use App\Models\Category;
 use App\Models\Product;
 use App\Models\Order;
 use Illuminate\Http\Request;
+use Mail;
+use App\Mail\OrderMail;
 
 class CartController extends Controller
 {
@@ -21,6 +23,27 @@ class CartController extends Controller
         }
 
         return view('site.pages.cart.index', compact('categories', 'products', 'order'));
+    }
+
+    public function mail(Request $request){
+        $products = Product::all();
+        $orderId = session('orderId');
+        $order = Order::with('products')->find($orderId);
+
+        if(!is_null($orderId)){
+            $order = Order::findOrFail($orderId);
+        }
+        $mailData = [
+            'products' => $products,
+            'orderId' => $orderId,
+            'order' => $order,
+            'tel' => $request->input('phone_number'),
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+        ];
+
+        Mail::to($request->input('email'))->send(new OrderMail($mailData));
+
     }
 
     public function cartAdd($productId){

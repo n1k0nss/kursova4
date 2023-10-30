@@ -1,4 +1,57 @@
+@import "@base/bootstrap";
+
 @import "@globals";
 
 @import "@components/one-click-modal";
 @import "@components/status-modal";
+@import "@components/count";
+
+
+@import "./components/cart-item";
+@import "./components/estimation";
+
+.cart {
+    width: 100%;
+    margin-bottom: 140px;
+    &__content {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__cart-item {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    &__box-items {
+        width: 100%;
+    }
+    &__estimation {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    &__button{
+        margin: 20px auto;
+    }
+}
+
+
+@include min(768px) {
+    .cart {
+        &__box-items {
+            width: 68%;
+            margin-right: 2%;
+        }
+        &__estimation {
+            width: 30%;
+        }
+    }
+}
+
+@include min(1560px) {
+    .cart {
+        &__content {
+            width: 75%;
+            margin: 0 auto;
+        }
+    }
+}

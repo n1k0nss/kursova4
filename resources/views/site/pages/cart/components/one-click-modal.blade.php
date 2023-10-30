@@ -6,7 +6,7 @@
         <div class="status-modal__header">
             <span class="status-modal__title js--status-modal-title">Оформити замовлення</span>
         </div>
-        <form class="one-click__form js--one-click-form" method="POST" action="">
+        <form class="one-click__form js--one-click-form" method="POST" action="{{route('mail')}}">
             @csrf
             <div class="one-click__form-group js--validate-group">
                 <label class="one-click__label" for="name">Введіть ім'я:</label>
@@ -27,8 +27,9 @@
             </div>
             <div class="one-click__form-group js--validate-group">
                 <label class="one-click__label" for="email">Електронна пошта</label>
-                <input type="text" name="email" autocomplete="off" placeholder="Email" class="one-click__form-input js--one-click-email"
+                <input type="email" name="email" autocomplete="off" placeholder="Email" class="one-click__form-input js--one-click-email"
                        data-pristine-required=""
+                       data-pristine-required-message="Введіть email"
                        data-pristine-email-message="Введіть валідний email"
                 >
             </div>

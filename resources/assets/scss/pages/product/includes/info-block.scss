@@ -1,0 +1,106 @@
+.info-block {
+    &__delivery{
+        display: flex;
+        @include widthGap(2, 15px);
+        background-position:  0 0, 0 0, 100% 0, 0 100%;
+        background-size: 1px 100%, 100% 1px, 1px 100% , 100% 1px;
+        background-repeat: no-repeat;
+        background-image:
+            repeating-linear-gradient(0deg, #D9DEE9, #D9DEE9 7px, transparent 7px, transparent 15px), // left
+            repeating-linear-gradient(90deg, #D9DEE9, #D9DEE9 7px, transparent 7px, transparent 15px), // top
+            repeating-linear-gradient(180deg, #D9DEE9, #D9DEE9 7px, transparent 7px, transparent 15px), // right
+            repeating-linear-gradient(270deg, #D9DEE9, #D9DEE9 7px, transparent 7px, transparent 15px) // bottom
+    ;
+        padding: 10px 15px;
+        border-radius: 6px;
+        margin-bottom: 20px;
+    }
+    &__delivery-box{
+        display: flex;
+        flex-direction: column;
+    }
+    &__delivery-title{
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.5;
+        margin-bottom: 5px;
+        color: #566577;
+    }
+    &__delivery-text{
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.5;
+        color: $black;
+    }
+
+    &__discount{
+        display: flex;
+        align-items: center;
+        background-position:  0 0, 0 0, 100% 0, 0 100%;
+        background-size: 1px 100%, 100% 1px, 1px 100% , 100% 1px;
+        background-repeat: no-repeat;
+        background-image:
+            repeating-linear-gradient(0deg, $blue, $blue 7px, transparent 7px, transparent 15px), // left
+            repeating-linear-gradient(90deg, $blue, $blue 7px, transparent 7px, transparent 15px), // top
+            repeating-linear-gradient(180deg, $blue,$blue 7px, transparent 7px, transparent 15px), // right
+            repeating-linear-gradient(270deg, $blue, $blue 7px, transparent 7px, transparent 15px) // bottom
+    ;
+        padding: 10px 15px;
+        border-radius: 6px;
+    }
+    &__discount-icon{
+        width: 24px;
+        height: 24px;
+        stroke: $blue;
+        stroke-width: 2;
+        margin-right: 15px;
+    }
+    &__discount-text{
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 1.5;
+        color: $blue;
+    }
+}
+
+@include min(768px) {
+    .info-block{
+        &__delivery-title,  &__delivery-text,  &__discount-text{
+            font-size: 14px;
+        }
+    }
+}
+
+@include min(992px) {
+    .info-block{
+        &__delivery-title{
+            @include font-size(16px);
+        }
+        &__delivery-text,  &__discount-text{
+            @include font-size(18px);
+            font-weight: 600;
+        }
+    }
+}
+
+@include min(1200px){
+    .info-block{
+        &__delivery, &__discount{
+            padding: 20px 30px;
+        }
+    }
+}
+
+@include min(1560px) {
+    .info-block{
+        &__delivery{
+            margin-bottom: 30px;
+        }
+    }
+}
+
+
+
+

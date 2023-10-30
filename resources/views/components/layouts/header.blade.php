@@ -26,7 +26,9 @@
                             <svg width="24" height="24">
                                 <use xlink:href="{{mix('/img/sprite.svg')}}#cart"></use>
                             </svg>
-                            <span class="cart-icon__count">{{ $totalProductCount }}</span>
+                           @if($totalProductCount > 0)
+                                <span class="cart-icon__count">{{ $totalProductCount }}</span>
+                           @endif
                         </div>
                         <span>Кошик</span>
                     </a>
@@ -66,7 +68,7 @@
                 <div class="modal__lang-switch">
                     <ul class="lang-list list">
                         <li class="lang-list__item"><a href="#">Ua</a></li>
-                        <li class="lang-list__item"><a href="#">Ru</a></li>
+                        <li class="lang-list__item"><a href="#">En</a></li>
                     </ul>
                 </div>
             </div>
