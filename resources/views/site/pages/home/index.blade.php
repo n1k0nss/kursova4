@@ -2,11 +2,14 @@
 @section('bladename', 'home')
 @section('content')
     <main class="home">
-        <!-- Header-->
         <section class="home__hero hero">
             <h1 class="hero__title">ValoShop - Valorant skins market</h1>
         </section>
-        <!-- Section-->
+
+        <div class="home__container container">
+        @include('site.pages.home.components.benefits', ['class' => 'home__benefits benefits'])
+        </div>
+
         <section class="home__products home-products">
             <div class="home__container container js--show-more-container">
                 <h2 class="home__subtitle title title--center">Список товарів</h2>
@@ -51,5 +54,29 @@
                 </button>
             </div>
         </section>
+
+        @include('site.pages.home.components.reviews', ['class' => 'home__reviews'])
+
+        <div class="home__container container">
+            @include('components.site.faq', ['class' => 'home__faq', 'faqs' => [
+                        [
+                            'title' => 'Чи можна накладеним платежем?',
+                            'text' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus animi aspernatur cumque deserunt doloribus error in incidunt itaque magnam mollitia nam nulla quae quaerat, quas quia, quo sed tenetur ut!'
+                        ],
+                        [
+                            'title' => 'Чи зможу я повернути товар?',
+                            'text' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus animi aspernatur cumque deserunt doloribus error in incidunt itaque magnam mollitia nam nulla quae quaerat, quas quia, quo sed tenetur ut!'
+                        ],
+                        [
+                            'title' => 'Скільки часу доставка?',
+                            'text' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus animi aspernatur cumque deserunt doloribus error in incidunt itaque magnam mollitia nam nulla quae quaerat, quas quia, quo sed tenetur ut!',
+                        ],
+                         [
+                            'title' => 'Чи потрібна передоплата?',
+                            'text' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus animi aspernatur cumque deserunt doloribus error in incidunt itaque magnam mollitia nam nulla quae quaerat, quas quia, quo sed tenetur ut!',
+                        ]
+
+                   ]])
+        </div>
     </main>
 @endsection

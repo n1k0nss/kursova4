@@ -108,7 +108,7 @@
         }
         &__link-text {
             width: 40%;
-            font-size: 16px;
+            @include font-size(18px);
             -webkit-line-clamp: inherit;
             overflow: visible;
         }

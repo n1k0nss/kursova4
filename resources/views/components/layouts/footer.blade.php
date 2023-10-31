@@ -2,7 +2,7 @@
     <div class="footer__container container">
         <a class="footer__logo" href="/">
             <svg class="footer__logo-icon">
-                <use xlink:href="{{mix('/img/sprite.svg')}}#logo"></use>
+                <use xlink:href="{{mix('/img/sprite.svg')}}#logo-white"></use>
             </svg>
         </a>
         <address class="footer__address">Луцьк, просп. Перемоги</address>

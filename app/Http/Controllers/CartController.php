@@ -43,7 +43,7 @@ class CartController extends Controller
         ];
 
         Mail::to($request->input('email'))->send(new OrderMail($mailData));
-
+        session()->forget('orderId');
     }
 
     public function cartAdd($productId){
@@ -66,9 +66,6 @@ class CartController extends Controller
         return redirect()->route('cart');
 
     }
-
-
-
 
 
     public function cartRemove($productId){

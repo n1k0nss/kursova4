@@ -6,7 +6,7 @@
 
 <main class="cart">
     <div class="cart__container container">
-        <h1 class="cart__title title">
+        <h1 class="cart__title title title--center">
             Ваш кошик
         </h1>
         <div class="cart__content">
@@ -23,7 +23,7 @@
         </div>
 
         <button @if(!isset($order) || $order->products->isEmpty()) disabled @endif type="button" class="cart__button btn js--one-click">
-            Оплатити @if(isset($order)){{$order->getFullPrice()}} VP @endif
+            Оформити
         </button>
     </div>
 </main>

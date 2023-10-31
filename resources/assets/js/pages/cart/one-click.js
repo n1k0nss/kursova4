@@ -64,6 +64,8 @@ function sendAjaxOneClick(e)
                 nameInputEl.value = '';
                 emailInputEl.value = '';
                 oneClickSubmitButton.setAttribute("disabled", "");
+                addToggleFocusToItems('.one-click__form-input');
+                oneClickModalBlock.close();
             })
             .catch(function (error) {
                 checkCallGetResponse = true;
@@ -71,6 +73,8 @@ function sendAjaxOneClick(e)
                 nameInputEl.value = '';
                 emailInputEl.value = '';
                 oneClickSubmitButton.setAttribute("disabled", "");
+                addToggleFocusToItems('.one-click__form-input');
+                oneClickModalBlock.close();
             });
     }
 }

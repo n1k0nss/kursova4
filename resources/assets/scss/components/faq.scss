@@ -1,0 +1,121 @@
+.faq {
+    &__container {
+
+    }
+    &__title {
+
+    }
+    &__wrapper {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__item {
+        width: 100%;
+        border-bottom: 1px solid #EFF0F6;
+        padding: 10px 20px;
+        transition-duration: .3s;
+        transition-property: background-color,padding,border;
+        &.active {
+            background-color: #F6F9FC;
+            border-bottom: 1px solid $blue;
+            .faq {
+                &__header {
+                    text-shadow: 0px 0px 1px #000;
+                }
+                &__collapse {
+                    margin-top: 10px;
+                }
+                &__header {
+                    &:before {
+                        transition-duration: 0.22s;
+                        transition-delay: 0.12s;
+                        transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+                        transform: rotate(360deg);
+                    }
+                    &:after {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    &__header {
+        position: relative;
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        font-size: 16px;
+        line-height: 1.2;
+        font-weight: 500;
+        color: #070414;
+        cursor: pointer;
+        padding-right: 35px;
+        &:before,
+        &:after {
+            position: absolute;
+            content: '';
+            right: 0;
+            top: 15px;
+            width: 14px;
+            height: 2px;
+            background-color: #2C3946;
+        }
+        &:after {
+            right: 0;
+            top: 15px;
+            transform: rotate(90deg);
+        }
+    }
+    &__collapse {
+        height: 0;
+        overflow: hidden;
+        transition-duration: .3s;
+        transition-property: height,margin;
+    }
+    &__text {
+        font-size: 12px;
+        line-height: 1.4;
+        font-weight: 400;
+        color: #070414;
+        ul {
+            list-style-position: inside;
+            padding-bottom: 10px;
+            li {
+                padding-bottom: 5px;
+            }
+        }
+        ol {
+            list-style-position: inside;
+            padding-bottom: 10px;
+            li {
+                padding-bottom: 5px;
+            }
+        }
+    }
+}
+
+@include min(992px) {
+    .faq {
+        &__header {
+            font-size: 18px;
+        }
+        &__text {
+            font-size: 14px;
+        }
+    }
+}
+
+@include min(1360px) {
+    .faq {
+        &__header {
+            font-size: 20px;
+        }
+        &__text {
+            font-size: 16px;
+        }
+        &__item {
+            padding: 20px;
+        }
+    }
+}

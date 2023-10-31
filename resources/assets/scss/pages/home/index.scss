@@ -1,8 +1,19 @@
 @import "@globals";
 @import "@components/products-list";
 @import "@components/hero";
+@import "@components/faq";
+
+@import "./includes/reviews";
+@import "./includes/review-item";
+@import "./includes/benefits";
 
 .home{
+    &__benefits{
+        padding: 50px 0;
+    }
+    &__faq{
+        padding: 50px 0;
+    }
     .home-products{
         margin-bottom: 60px;
         &__btn {
@@ -47,6 +58,22 @@
 
 @include min(992px){
     .home{
+        .faq {
+            padding: 100px 0 200px;
+            &__wrapper {
+                justify-content: flex-start;
+            }
+            &__item {
+                width: 48%;
+                &:nth-child(odd) {
+                    margin-right: 2%;
+                }
+                &:nth-child(even) {
+                    margin-left: 2%;
+                }
+
+            }
+        }
         .home-products{
             &__btn{
                 margin-top: 15px;
@@ -66,6 +93,9 @@
                 width: 18px;
                 height: 18px;
             }
+            &__btn-text {
+                @include font-size(18px);
+            }
         }
     }
 }
@@ -73,10 +103,10 @@
 
 @include min(1360px) {
     .home{
+        &__benefits{
+            padding: 80px 0;
+        }
         .home-products{
-            &__btn-text {
-                font-size: 18px;
-            }
             &__btn-icon{
                 width: 22px;
                 height: 22px;

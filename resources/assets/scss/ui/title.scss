@@ -38,30 +38,17 @@
     }
 }
 
-@include min(440px) {
+@include min(992px) {
     .title {
-        font-size: 26px;
+        @include font-size(34px);
     }
 }
 
 @include min(1200px) {
     .title {
-        font-size: 28px;
         &:before {
             width: 190px;
             height: 2px;
         }
-    }
-}
-
-@include min(1440px) {
-    .title {
-        font-size: 30px;
-    }
-}
-
-@include min(1560px) {
-    .title {
-        font-size: 34px;
     }
 }

@@ -1,13 +1,15 @@
 {
     "/js/cart/spritemap.js": "/js/cart/spritemap.js?id=495b5ddc863e4a4eae3d7c0ac99021b0",
-    "/./img/sprite.svg": "/./img/sprite.svg?id=a49533e9b387ac7ea6647315d310b47e",
-    "/js/cart.js": "/js/cart.js?id=ff3c23b0db1f5e419d083dc184d28ccb",
+    "/./img/sprite.svg": "/./img/sprite.svg?id=09471a92d1035710cf5d1cf1ac65ec2e",
+    "/js/cart.js": "/js/cart.js?id=bead20195524673a750d2ada788c76b5",
+    "/js/cart-success.js": "/js/cart-success.js?id=9a8dfee28c13d0270cceae97b17a0ba8",
     "/js/catalog.js": "/js/catalog.js?id=9a8dfee28c13d0270cceae97b17a0ba8",
-    "/js/home.js": "/js/home.js?id=9a8dfee28c13d0270cceae97b17a0ba8",
+    "/js/home.js": "/js/home.js?id=265c05258697bde9d9429dfd602aa243",
     "/js/product.js": "/js/product.js?id=ea0fa741ab5da8fcdd17af27f1c15b53",
-    "/css/product.css": "/css/product.css?id=4a43e32e3abd99e598cebf5f5cb1b424",
-    "/css/home.css": "/css/home.css?id=f0778708f88f6bbe8e159d1b19004e97",
-    "/css/catalog.css": "/css/catalog.css?id=b25118c8c463df2038ea3df9c45133e4",
-    "/css/cart.css": "/css/cart.css?id=3aeb447c40ab89a109dc41780e9469fe",
-    "/img/sprite.svg": "/img/sprite.svg?id=a49533e9b387ac7ea6647315d310b47e"
+    "/css/product.css": "/css/product.css?id=afa7e71e1235cbbb95b6337d3c6768c4",
+    "/css/home.css": "/css/home.css?id=01cad487b6676dae7f40afe9d07b41f1",
+    "/css/catalog.css": "/css/catalog.css?id=62835e4ccebd5d56d6e75096abb3c6c6",
+    "/css/cart-success.css": "/css/cart-success.css?id=7e9b38b76fecba46ad6ae6d0211f7c70",
+    "/css/cart.css": "/css/cart.css?id=002b3df01bfacd62ead5ee62d9de939f",
+    "/img/sprite.svg": "/img/sprite.svg?id=09471a92d1035710cf5d1cf1ac65ec2e"
 }

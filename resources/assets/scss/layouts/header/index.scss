@@ -12,15 +12,15 @@
         height: 65px;
         width: 53%;
     }
+    &__logo-link{
+        display: flex;
+        width: 135px;
+        height: inherit;
+    }
     &__modal{
         display: flex;
         align-items: center;
         height: 65px;
-        svg{
-            fill: none;
-            stroke: $primary-color;
-            stroke-width: 1.5;
-        }
     }
     &::before{
         content: '';
@@ -33,22 +33,40 @@
         background-color: $bg-light;
     }
 }
-.logo__link{
-    display: flex;
-    width: 135px;
-    height: inherit;
-}
 
-.header__menu-button{
-    display: flex;
-    align-items: center;
-    .menu-button__wrapper{
+.burger-menu{
+    &__button{
+        display: flex;
+        align-items: center;
+        &.is-open .burger-menu__span{
+            background-color: transparent;
+            transition-delay: .15s;
+        }
+
+        &.is-open .burger-menu__span::before{
+            background-color: $hover-color;
+            top: -2px;
+            width: 22px;
+            transform: translate3d(0, 10px, 0) rotate(-45deg);
+            transition: top .1s cubic-bezier(.33333,0,.66667,.33333) .1s,transform .13s cubic-bezier(0.22, 0.61, 0.36, 1) .22s;
+
+        }
+
+        &.is-open .burger-menu__span::after{
+            background-color: $hover-color;
+            top: -2px;
+            width: 22px;
+            transform: translate3d(0, 10px, 0) rotate(45deg);
+            transition: top .2s cubic-bezier(.33333,0,.66667,.33333),transform .13s cubic-bezier(.215,.61,.355,1) .22s;
+        }
+    }
+    &__button-wrapper{
         position: relative;
         width: 18px;
         height: 20px;
         background-color: #f3f6f9;
     }
-    .menu-button__span{
+    &__span{
         position: absolute;
         left: 0;
         top: -2;
@@ -56,13 +74,13 @@
         width: 18px;
         height: 2px;
         border-radius: 4px;
-        background-color: $primary-color;
+        background-color: $blue;
         &::before{
             content: '';
             position: absolute;
             top: 7px;
             right: 0;
-            background-color: $primary-color;
+            background-color: $blue;
             width: 14px;
             height: 2px;
             border-radius: 4px;
@@ -73,7 +91,7 @@
             position: absolute;
             top: 14px;
             right: 0;
-            background-color: $primary-color;
+            background-color: $blue;
             width: 10px;
             height: 2px;
             border-radius: 4px;
@@ -81,203 +99,186 @@
         }
     }
 
-    &.is-open .menu-button__span{
-        background-color: transparent;
-        transition-delay: .15s;
+    &__box{
+        opacity: 0;
+        pointer-events: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 65px);
+        padding: 0 15px;
+        background-color: #fff;
+        z-index: 10;
+        color: $secondary-color;
+
+        transition: opacity 0.3s ease-in;
+        &.is-open{
+            opacity: 1;
+            pointer-events: all;
+        }
     }
 
-    &.is-open .menu-button__span::before{
-        background-color: $hover-color;
-        top: -2px;
-        width: 22px;
-        transform: translate3d(0, 10px, 0) rotate(-45deg);
-        transition: top .1s cubic-bezier(.33333,0,.66667,.33333) .1s,transform .13s cubic-bezier(0.22, 0.61, 0.36, 1) .22s;
-
-    }
-
-    &.is-open .menu-button__span::after{
-        background-color: $hover-color;
-        top: -2px;
-        width: 22px;
-        transform: translate3d(0, 10px, 0) rotate(45deg);
-        transition: top .2s cubic-bezier(.33333,0,.66667,.33333),transform .13s cubic-bezier(.215,.61,.355,1) .22s;
-    }
-}
-
-
-.menu-modal__box{
-    opacity: 0;
-    pointer-events: none;
-    position: absolute;
-    top: 65px;
-    left: 0;
-    width: 100%;
-    height: calc(100vh - 65px);
-    padding: 0 15px;
-    background-color: #fff;
-    z-index: 10;
-    color: $secondary-color;
-
-    transition: opacity 0.3s ease-in;
-
-    &.is-open{
-        opacity: 1;
-        pointer-events: all;
-    }
-
-    .modal__cart{
+    &__cart{
         margin-top: 19px;
         padding-left: 25px;
-        a{
 
-            display: flex;
-            align-items: center;
-            gap: 20px;
-
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 120%;
-
-            color: $secondary-color;
-        }
-
-        span{
-            font-style: normal;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 120%;
-            color: $secondary-color;
-
-            transition-duration: .3s;
-
-
-        }
-
-        &:hover span{
-            color: $hover-color;
-        }
-
-        .cart-icon{
-            position: relative;
-
-            &__count{
-                content: '';
-                position: absolute;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                background-color: $hover-color;
-                border-radius: 50%;
-                width: 13px;
-                height: 13px;
-                top: -2px;
-                right: -3px;
-
-
-                font-weight: 700;
-                font-size: 6.66667px;
-                line-height: 120%;
-                font-feature-settings: 'pnum' on, 'lnum' on;
-                color: #fff;
+        &.disabled{
+            .burger-menu{
+                &__cart-name{
+                    color: $secondary-color;
+                }
+                &__cart-icon{
+                    stroke: $secondary-color;
+                }
+            }
+            &:hover{
+                .burger-menu{
+                    &__cart-name{
+                        color: $secondary-color;
+                    }
+                    &__cart-icon{
+                        stroke: $secondary-color;
+                    }
+                }
             }
         }
 
+        &:hover{
+            .burger-menu{
+                &__cart-name{
+                    color: $hover-color;
+                }
+                &__cart-icon{
+                    stroke: $hover-color;
+                }
+            }
+        }
+    }
+    &__cart-wrapper{
+        position: relative;
+    }
+    &__cart-count{
+        content: '';
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $hover-color;
+        border-radius: 50%;
+        width: 13px;
+        height: 13px;
+        top: -2px;
+        right: -3px;
 
+        font-weight: 700;
+        font-size: 9px;
+        line-height: 120%;
+        font-feature-settings: 'pnum' on, 'lnum' on;
+        color: #fff;
+    }
+    &__cart-link{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 120%;
+
+        color: $secondary-color;
+    }
+    &__cart-name{
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 120%;
+        transition-duration: .3s;
+    }
+    &__cart-icon{
+        stroke-width: 1.5;
+        stroke: $secondary-color;
+        transition-duration: .3s;
     }
 
-    .modal__nav{
+    &__nav{
         border-top: 1px $inactive-color solid;
         border-bottom: 1px $inactive-color solid;
         padding: 26px 0;
         margin-top: 23px;
         margin-bottom: 32px;
-
     }
+    &__contacts{
+        margin-left: 40px;
+        margin-bottom: 36px;
+    }
+}
 
-    .nav{
+.nav{
+    &__list{
         padding-left: 25px;
-    }
-
-    .nav-list{
         display: flex;
         flex-direction: column;
         gap: 20px;
-
-
     }
-
-    .nav-list__item{
+    &__item{
         font-weight: 400;
         font-size: 16px;
         line-height: 120%;
         color: $secondary-color;
-
         &:hover .nav__link{
             color: $hover-color;
         }
     }
-
-    .nav__link{
+    &__link{
         transition-duration: .3s;
-
     }
+}
 
-    .modal__contact{
-        margin-left: 40px;
-        margin-bottom: 36px;
+.header-contacts{
+    &__title{
+        margin-bottom: 16px;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14px;
+        color: $head-text;
+        display: inline-block;
     }
-
-    .contact__title{
-        p{
-            margin-bottom: 16px;
-            font-weight: 400;
-            font-size: 12px;
-            line-height: 14px;
-            color: $head-text;
-        }
-    }
-
-    .contact__number-list{
+    &__list{
         display: flex;
         flex-direction: column;
         gap: 14px;
-
-        & svg{
-            stroke: none;
-        }
-
-        li{
-            font-weight: 500;
-            font-size: 20px;
-            line-height: 150%;
-            font-feature-settings: 'pnum' on, 'lnum' on;
-            color: $primary-color;
-        }
     }
-
-    .number-list__item{
+    &__item{
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 150%;
+        font-feature-settings: 'pnum' on, 'lnum' on;
+        color: $primary-color;
         display: flex;
         align-items: center;
         gap: 3px;
-
-        a{
-            display: flex;
-        }
     }
-
-    .modal__lang-switch{
+    &__link{
         display: flex;
-        justify-content: center;
-        align-items: center;
     }
+    &__social-link{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
 
-    .lang-list{
+.lang-switch{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__list{
         display: flex;
         flex-direction: row;
         gap: 23px;
     }
-
-    .lang-list__item{
+    &__item{
         font-weight: 600;
         font-size: 16px;
         line-height: 120%;
@@ -290,7 +291,6 @@
             color: $inactive-color;
         }
     }
-
 }
 
 
@@ -303,10 +303,10 @@
             justify-content: center;
             width: 100%;
         }
-        &__search-modal{
-            order: 4;
+        &__logo-link{
+            width: 180px;
         }
-        &__menu-modal{
+        &__modal{
             order: 1;
             width: 100%;
             height: 50px;
@@ -314,62 +314,74 @@
         &__cart-modal{
             display: none;
         }
-        &__menu-button{
-            display: none;
-        }
         &::before {
             height: 50px;
         }
     }
 
-    .logo__link{
-        width: 180px;
-    }
-
-    .menu-modal__box{
-        opacity: 1;
-        pointer-events: all;
-        position: static;
-        width: 100%;
-        height: 50px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: $bg-light;
-        padding: 0;
-        .modal__contact{
+    .burger-menu{
+        &__button{
             display: none;
         }
-        .modal__nav{
+        &__box{
+            opacity: 1;
+            pointer-events: all;
+            position: static;
+            width: 100%;
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: $bg-light;
+            padding: 0;
+        }
+        &__contacts{
+            display: none;
+        }
+        &__nav{
             order: 1;
             border: none;
             padding: 0;
             margin: 0;
         }
-        .nav{
-            padding: 0;
-        }
-        .nav-list{
-            flex-direction: row;
-        }
-        .modal__lang-switch{
+        &__lang-switch{
             order: 2;
         }
-        .modal__cart{
+        &__cart{
             display: block;
             order: 4;
             padding: 0;
             margin: 0;
-            a{
-                gap: 10px;
-            }
+        }
+        &__cart-link{
+            gap: 10px;
+        }
+        &__cart-name{
+            @include font-size(18px);
         }
     }
+
+    .nav{
+        &__list{
+            padding: 0;
+            flex-direction: row;
+        }
+        &__link{
+            @include font-size(18px);
+        }
+    }
+
+    .lang-switch{
+        &__link{
+            @include font-size(18px);
+        }
+    }
+
 }
 
 @include min(1360px) {
-    .menu-modal__box{
-        .nav-list{
+    .nav{
+        &__list{
             gap: 60px;
         }
     }

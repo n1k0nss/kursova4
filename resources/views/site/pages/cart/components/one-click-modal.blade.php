@@ -10,7 +10,7 @@
             @csrf
             <div class="one-click__form-group js--validate-group">
                 <label class="one-click__label" for="name">Введіть ім'я:</label>
-                <input type="text" name="name" autocomplete="off" placeholder="Ім'я" class="one-click__form-input js--one-click-name"
+                <input type="text" name="name" placeholder="Ім'я" class="one-click__form-input js--one-click-name"
                        data-pristine-required=""
                        data-pristine-required-message="Поле обов'язкове"
                        data-pristine-minlength-message="Мінімум 2 символи"
@@ -18,7 +18,7 @@
             </div>
             <div class="one-click__form-group js--validate-group">
                 <label class="one-click__label" for="tel">Номер телефону</label>
-                <input type="tel" name="tel" autocomplete="off" placeholder="+38 (___) ___-__-__" class="one-click__form-input js--init-inputmask" inputmode="numeric"
+                <input type="tel" name="tel" placeholder="+38 (___) ___-__-__" class="one-click__form-input js--init-inputmask" inputmode="numeric"
                        data-pristine-required=""
                        data-pristine-required-message="Введіть номер телефону"
                        data-pristine-phone=""
@@ -27,7 +27,7 @@
             </div>
             <div class="one-click__form-group js--validate-group">
                 <label class="one-click__label" for="email">Електронна пошта</label>
-                <input type="email" name="email" autocomplete="off" placeholder="Email" class="one-click__form-input js--one-click-email"
+                <input type="email" name="email" placeholder="Email" class="one-click__form-input js--one-click-email"
                        data-pristine-required=""
                        data-pristine-required-message="Введіть email"
                        data-pristine-email-message="Введіть валідний email"
