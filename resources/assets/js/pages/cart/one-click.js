@@ -75,6 +75,10 @@ function sendAjaxOneClick(e)
                 oneClickSubmitButton.setAttribute("disabled", "");
                 addToggleFocusToItems('.one-click__form-input');
                 oneClickModalBlock.close();
+            })
+            .finally(function() {
+                oneClickSubmitButton.removeAttribute("disabled");
+                window.location.href = "/cart-success";
             });
     }
 }

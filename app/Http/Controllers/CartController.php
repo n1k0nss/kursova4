@@ -25,6 +25,12 @@ class CartController extends Controller
         return view('site.pages.cart.index', compact('categories', 'products', 'order'));
     }
 
+    public function cartSuccess(){
+        $categories = Category::all();
+
+        return view('site.pages.cart-success.index', compact('categories'));
+    }
+
     public function mail(Request $request){
         $products = Product::all();
         $orderId = session('orderId');
@@ -44,6 +50,7 @@ class CartController extends Controller
 
         Mail::to($request->input('email'))->send(new OrderMail($mailData));
         session()->forget('orderId');
+        return redirect()->route('index');
     }
 
     public function cartAdd($productId){
