@@ -40,6 +40,7 @@
                             </div>
                         @endforeach
                     </div>
+                    <div class="reviews__scrollbar swiper-scrollbar"></div>
                 </div>
             </div>
         </div>

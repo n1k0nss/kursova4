@@ -1,5 +1,7 @@
 
-import Swiper from 'swiper';
+import {Swiper, Scrollbar} from "@/libs/swiper-exports";
+
+Swiper.use([Scrollbar]);
 
 const swiperReviews = document.querySelectorAll('[data-swiper-reviews]');
 
@@ -14,6 +16,10 @@ if (mediaQuery.matches) {
             slidesPerView: 1,
             spaceBetween: 20,
             a11y: true,
+            scrollbar: {
+                el: swiperReview.querySelector(".swiper-scrollbar"),
+                draggable: true,
+            },
             breakpoints: {
                 568: {
                     slidesPerView: 2,

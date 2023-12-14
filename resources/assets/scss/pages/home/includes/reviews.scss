@@ -41,6 +41,11 @@
         height: 17px;
         fill: var(--navy);
     }
+    &__scrollbar{
+        .swiper-scrollbar-drag{
+            background-color: #1598D8;
+        }
+    }
 }
 
 @include min(360px) {
@@ -74,6 +79,10 @@
         }
         &__slider-navigation {
             display: none;
+        }
+        &__scrollbar{
+            bottom: -25px !important;
+            height: 3px !important;
         }
     }
 }

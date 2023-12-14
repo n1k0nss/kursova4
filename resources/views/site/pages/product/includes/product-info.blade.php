@@ -16,16 +16,16 @@
                     Новий
                 </span>
             </span>
-            <form class="product-info__favorite-form js--add-to-favorite"
-                  action="" method="POST"
-            >
-                @csrf
-                <button class="product-info__favorite js--add-to-favorite-button" type="submit">
-                    <svg class="product-info__favorite-icon">
-                        <use xlink:href="{{mix('/img/sprite.svg')}}#heart"></use>
-                    </svg>
-                </button>
-            </form>
+{{--            <form class="product-info__favorite-form js--add-to-favorite"--}}
+{{--                  action="" method="POST"--}}
+{{--            >--}}
+{{--                @csrf--}}
+{{--                <button class="product-info__favorite js--add-to-favorite-button" type="submit">--}}
+{{--                    <svg class="product-info__favorite-icon">--}}
+{{--                        <use xlink:href="{{mix('/img/sprite.svg')}}#heart"></use>--}}
+{{--                    </svg>--}}
+{{--                </button>--}}
+{{--            </form>--}}
         </div>
 
     </div>

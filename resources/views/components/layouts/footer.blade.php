@@ -35,7 +35,7 @@
         </div>
         <div class="footer__block footer-block footer-block--navigation">
             <span class="footer-block__title">
-                Інфрмація
+                Інформація
             </span>
             <ul class="navigation footer-block__navigation">
                 @foreach ($categories as $category)
