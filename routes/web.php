@@ -6,6 +6,7 @@ use App\Http\Controllers\CartController;
 
 Route::get('/', [MainController::class, 'index'])->name('index');
 Route::get('/cart', [CartController::class, 'cart'])->name('cart');
+Route::get('/cart-success', [CartController::class, 'cartSuccess'])->name('cart-success');
 Route::post('/send-mail', [CartController::class, 'mail'])->name('mail');
 
 Route::post('/cart/add/{id}', [CartController::class, 'cartAdd'])->name('cart-add');
