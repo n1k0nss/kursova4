@@ -18,6 +18,5 @@ export const slideHeight = (content, active,  transition = 400) => {
             }
             content.style.height = ''
         },1)
-        console.log(1);
     }
 }

@@ -22,6 +22,9 @@ class CartController extends Controller
             $order = Order::findOrFail($orderId);
         }
 
+        if ($order->products->isEmpty()) {
+            return redirect()->route('index');
+        }
         return view('site.pages.cart.index', compact('categories', 'products', 'order'));
     }
 
@@ -54,6 +57,7 @@ class CartController extends Controller
     }
 
     public function cartAdd($productId){
+
         $orderId = session('orderId');
         $order = Order::findOrNew($orderId);
 
@@ -97,6 +101,8 @@ class CartController extends Controller
         }
 
         return redirect()->route('cart');
+
+
     }
 
     public function cartDetach($productId) {
@@ -104,6 +110,10 @@ class CartController extends Controller
         $order = Order::find($orderId);
 
         $order->products()->detach($productId);
+
+        if ($order->products->isEmpty()) {
+            return redirect()->route('index');
+        }
 
         return redirect()->route('cart');
     }

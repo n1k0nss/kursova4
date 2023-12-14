@@ -34,7 +34,6 @@ const submitOneClickOrder = (e)=>{
     e.preventDefault();
     !oneClickFormValidation ? oneClickFormValidation = new Validate(oneClickForm) : oneClickFormValidation.reinstall(oneClickForm);
     oneClickFormValid = oneClickFormValidation.validate();
-    console.log(oneClickFormValid)
     if (oneClickFormValid){
         sendAjaxOneClick(e);
     }
@@ -48,7 +47,6 @@ function sendAjaxOneClick(e)
     const input = inputEl.value;
     const nameInput = nameInputEl.value;
     const emailInput = emailInputEl.value;
-
     let sendData = {
         'phone_number': input,
         'name': nameInput,
