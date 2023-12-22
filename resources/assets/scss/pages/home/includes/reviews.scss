@@ -70,9 +70,6 @@
                 width: 100%;
                 display: flex;
             }
-            .swiper-slide {
-                width: 23% !important;
-            }
         }
         &__review-item {
             width: 100%;
@@ -86,12 +83,12 @@
         }
     }
 }
-@include min(1360px) {
-    .reviews {
-        &__box {
-            .swiper-slide {
-                width: 20% !important;
-            }
-        }
-    }
-}
+// @include min(1360px) {
+//     .reviews {
+//         &__box {
+//             .swiper-slide {
+//                 width: 20% !important;
+//             }
+//         }
+//     }
+// }

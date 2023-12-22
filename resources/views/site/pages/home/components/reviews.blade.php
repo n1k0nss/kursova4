@@ -31,13 +31,11 @@
                             ]
                         @endphp
                         @foreach($reviews as $review)
-                            <div class="swiper-slide">
                                 @include('site.pages.home.components.review-item', [
-                                    'class' => 'reviews__review-item',
+                                    'class' => 'reviews__review-item swiper-slide',
                                     'author' => $review['author'],
                                     'text' => $review['text']
                                 ])
-                            </div>
                         @endforeach
                     </div>
                     <div class="reviews__scrollbar swiper-scrollbar"></div>
