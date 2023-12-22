@@ -1,15 +1,15 @@
 {
     "/js/cart/spritemap.js": "/js/cart/spritemap.js?id=495b5ddc863e4a4eae3d7c0ac99021b0",
     "/./img/sprite.svg": "/./img/sprite.svg?id=09471a92d1035710cf5d1cf1ac65ec2e",
-    "/js/cart.js": "/js/cart.js?id=23dcdb844ac206f0e6e17612b70948bb",
+    "/js/cart.js": "/js/cart.js?id=56478ee9d88113d7e284f382bf1a13ca",
     "/js/cart-success.js": "/js/cart-success.js?id=07353ce6554de5dbe04e48896a193c14",
     "/js/catalog.js": "/js/catalog.js?id=07353ce6554de5dbe04e48896a193c14",
     "/js/home.js": "/js/home.js?id=a3c57390fe855adb73437d0dcaa16fa5",
     "/js/product.js": "/js/product.js?id=ce9003d10d05320a02bb0c62d3d67746",
-    "/css/product.css": "/css/product.css?id=a5fa71b521d2a52714603cca99bfc1ee",
-    "/css/home.css": "/css/home.css?id=2b989d2a5134f2b33cf08dc84750422b",
-    "/css/catalog.css": "/css/catalog.css?id=d630dd7879e42185eb415d6a936f2526",
-    "/css/cart-success.css": "/css/cart-success.css?id=ebe024f9ad83634875ad181ed3fe7ced",
-    "/css/cart.css": "/css/cart.css?id=b969561b5aa699192ecd076986edb052",
+    "/css/product.css": "/css/product.css?id=b46e5bdc3bb57d63f2f7ddd2f865c31b",
+    "/css/home.css": "/css/home.css?id=8aa11f893e51b5f2e617f6719ceed0a0",
+    "/css/catalog.css": "/css/catalog.css?id=70f2723ec4b7439e9af4ca19eab97be0",
+    "/css/cart-success.css": "/css/cart-success.css?id=976673fbbd219e15344c9fadc194f45c",
+    "/css/cart.css": "/css/cart.css?id=93cba740ee4037e864e98276ff31569d",
     "/img/sprite.svg": "/img/sprite.svg?id=09471a92d1035710cf5d1cf1ac65ec2e"
 }

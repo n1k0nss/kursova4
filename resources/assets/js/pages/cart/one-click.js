@@ -35,6 +35,8 @@ const submitOneClickOrder = (e)=>{
     !oneClickFormValidation ? oneClickFormValidation = new Validate(oneClickForm) : oneClickFormValidation.reinstall(oneClickForm);
     oneClickFormValid = oneClickFormValidation.validate();
     if (oneClickFormValid){
+        oneClickSubmitButton.textContent = '';
+        oneClickSubmitButton.innerHTML = '<span class="loader"></span>';
         sendAjaxOneClick(e);
     }
 }
